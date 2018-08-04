@@ -1,0 +1,1 @@
+# gulp-tutorial initngit add README.mdngit commit -m first commitngit remote add origin https://github.com/kawa1228/gulp-tutorial.gitngit push -u origin master
