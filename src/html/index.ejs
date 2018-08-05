@@ -14,11 +14,11 @@ var pageTitle
     </title>
     <meta
         name="description"
-        content="<%= config.default.description %>"
+        content="<%= config.description %>"
     >
     <meta
         name="author"
-        content="<%= config.default.author %>"
+        content="<%= config.author %>"
     >
     <meta
         property="og:type"
@@ -26,26 +26,18 @@ var pageTitle
     >
     <meta
         property="og:site_name"
-        content="<%= config.default.title %>"
-    >
-    <meta
-        property="og:title"
-        content="
-        <% if (key !== 'index') { %>
-            <%= pagetitle + ' | ' %>
-        <% } %>
-        <%= config.default.title %>"
+        content="<%= config.title %>"
     >
     <meta
         property="og:description"
-        content="<%= config.default.description %>"
+        content="<%= config.description %>"
     >
     <meta
         property="og:url"
-        content="<%= config.default.publicPath %>"
+        content="<%= config.publicPath %>"
     >
     <meta
         property="og:image"
-        content="<%= config.default.publicPath %>/img/facebook.png"
+        content="<%= config.publicPath %>/img/facebook.png"
     >
 </head>
