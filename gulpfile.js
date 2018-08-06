@@ -33,7 +33,12 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('watch', ()=> {
+gulp.task('watch', (done)=> {
+    const browserReload = (done) => {
+        browserSync.reload()
+        done()
+    }
+    gulp.watch('./dist/**/*', browserReload)
     gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
     gulp.watch('./src/html/**/*.ejs', gulp.series('ejs'))
 
@@ -43,6 +48,9 @@ gulp.task('serve', (done) => {
     browserSync.init(browserSyncOption)
     done()
 })
+
+gulp.task('default', gulp.series('serve', 'watch'))
+
 
 //ejsデータ読み込み設定
 const ejsDataOption = {
