@@ -7,6 +7,7 @@ const flexBugsFixes = require('postcss-flexbugs-fixes')
 const cssWring = require('csswring')
 const ejs = require("gulp-ejs")
 const htmlmin = require("gulp-htmlmin")
+const browserSync = require("browser-sync").create()
 
 const configJsonData = fs.readFileSync('./src/ejs/config.json')
 const configObj = JSON.parse(configJsonData)
@@ -21,6 +22,10 @@ const postcssOption = [
     cssWring
  ]
 
+const browserSyncOption = {
+    server: './dist'
+}
+
 gulp.task('sass', () => {
     return gulp.src('./src/sass/common.scss')
         .pipe(sass())
@@ -32,6 +37,11 @@ gulp.task('watch', ()=> {
     gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
     gulp.watch('./src/html/**/*.ejs', gulp.series('ejs'))
 
+})
+
+gulp.task('serve', (done) => {
+    browserSync.init(browserSyncOption)
+    done()
 })
 
 //ejsデータ読み込み設定

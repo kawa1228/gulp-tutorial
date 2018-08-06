@@ -13,6 +13,7 @@
   ],
   "devDependencies": {
     "autoprefixer": "^9.1.0",
+    "browser-sync": "^2.24.6",
     "csswring": "^7.0.0",
     "gulp": "^4.0.0",
     "gulp-ejs": "^3.1.3",
